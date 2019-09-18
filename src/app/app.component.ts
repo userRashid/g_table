@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { TableConfig } from './components/table/table.interface';
+import { TableConfig } from './components/g-table/table.interface';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +7,8 @@ import { TableConfig } from './components/table/table.interface';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  form: FormGroup;
   tableConfig: TableConfig;
-  constructor(
-    private _formBuilder: FormBuilder,
-  ) {
-    this.form = this._formBuilder.group({
-      student: []
-    });
-
+  constructor() {
     this.tableConfig = {
       fields: [{
         name: 'Id',
@@ -42,18 +34,6 @@ export class AppComponent {
         id: 5,
         name: 'Ralph'
       }]
-    }
+    };
   }
-
-  /* setValues(): void {
-    console.log(this.form);
-    this.form.patchValue({
-      student: {
-        student: 'Two',
-        college: 'College GTU Two',
-        university: 'MJP GTU Two',
-        code: '600'
-      }
-    })
-  } */
 }
